@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "favicon.8bc43364230544affdf79ddb012d2d71.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
