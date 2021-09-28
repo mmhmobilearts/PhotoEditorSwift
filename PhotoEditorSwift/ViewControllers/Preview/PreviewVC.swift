@@ -11,7 +11,7 @@
 import UIKit
 import iOSPhotoEditor
 
-class PreviewVC: UIViewController
+public class PreviewVC: UIViewController
 {
     @IBOutlet weak var imageView: UIImageView!
 
@@ -19,12 +19,12 @@ class PreviewVC: UIViewController
     var image = UIImage()
 
     //MARK: Viewcontroller lifecycle
-    override func viewWillAppear(_ animated: Bool)
+    public override func viewWillAppear(_ animated: Bool)
     {
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewDidLoad()
+    public override func viewDidLoad()
     {
         super.viewDidLoad()
 
@@ -75,12 +75,12 @@ extension PreviewVC
 //MARK: Functions
 extension PreviewVC: PhotoEditorDelegate
 {
-    func doneEditing(image: UIImage) {
+    public func doneEditing(image: UIImage) {
         print("DoneEditing")
         self.imageView.image = image
     }
     
-    func canceledEditing() {
+    public func canceledEditing() {
         print("CancelledEditing")
     }
     

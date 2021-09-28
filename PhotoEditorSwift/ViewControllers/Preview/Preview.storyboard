@@ -11,7 +11,7 @@
         <!--PreviewVC-->
         <scene sceneID="Km2-M5-w1P">
             <objects>
-                <viewController storyboardIdentifier="PreviewVC" hidesBottomBarWhenPushed="YES" id="RAz-oy-Y62" customClass="PreviewVC" customModule="PhotoEditorSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Preview" hidesBottomBarWhenPushed="YES" id="RAz-oy-Y62" customClass="PreviewVC" customModule="PhotoEditorSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nIF-gw-DJl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

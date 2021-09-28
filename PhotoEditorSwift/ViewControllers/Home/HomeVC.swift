@@ -9,25 +9,25 @@ import UIKit
 import Photos
 import iOSPhotoEditor
 
-class MainVC: UIViewController
-{    
+public class HomeVC: UIViewController
+{
     @IBOutlet weak var viewShowGallery: UIView!
     @IBOutlet weak var viewCaptureCamera: UIView!
 
     var imagePicker = UIImagePickerController()
     
-    override func viewDidLoad()
+    public override func viewDidLoad()
     {
         super.viewDidLoad()
         self.navigationItem.title = "Photo Editor"
         setupUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    public override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
     }
     
@@ -70,16 +70,16 @@ class MainVC: UIViewController
     }
 }
 
-extension MainVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate
+extension HomeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
     {
         guard let image = info[.originalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         imagePicker.dismiss(animated: true, completion: nil)
-        let storyboard = UIStoryboard(name: "PreviewVC", bundle: nil)
-        let objVC = storyboard.instantiateViewController(withIdentifier: "PreviewVC") as! PreviewVC
+        let storyboard = UIStoryboard(name: "Preview", bundle: nil)
+        let objVC = storyboard.instantiateViewController(withIdentifier: "Preview") as! PreviewVC
         objVC.image = image
         self.navigationController?.pushViewController(objVC, animated: true)
     }
