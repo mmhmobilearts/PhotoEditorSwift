@@ -23,14 +23,6 @@ public class HomeVC: UIViewController
         setupUI()
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
-    }
-    
-    public override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
-    }
-    
     func setupUI()
     {
         setViewRound(view: viewCaptureCamera)

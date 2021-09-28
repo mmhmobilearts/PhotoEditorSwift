@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   spec.platform = :ios
   spec.name         = "PhotoEditorSwift"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.3"
   spec.requires_arc = true
   spec.summary      = "A short description of PhotoEditorSwift."
   spec.description  = <<-DESC
