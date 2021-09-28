@@ -1,8 +1,8 @@
 //
-//  StartVC.swift
-//  Zoom Booster
+//  HomeVC.swift
+//  PhotoEditorSwift
 //
-//  Created by bhavik antala on 6/19/21.
+//  Created by PhotoEditorSwift on 6/19/21.
 //
 
 import UIKit
@@ -42,7 +42,7 @@ public class HomeVC: UIViewController
         if UIImagePickerController.isSourceTypeAvailable(.camera)
         {
             imagePicker.delegate = self
-            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.sourceType = .camera
             imagePicker.allowsEditing = false
             present(imagePicker, animated: true, completion: nil)
         }
@@ -53,7 +53,7 @@ public class HomeVC: UIViewController
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum)
         {
             imagePicker.delegate = self
-            imagePicker.sourceType = .camera
+            imagePicker.sourceType = .savedPhotosAlbum
             imagePicker.allowsEditing = false
             present(imagePicker, animated: true, completion: nil)
         }
@@ -78,7 +78,8 @@ extension HomeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         imagePicker.dismiss(animated: true, completion: nil)
-        let storyboard = UIStoryboard(name: "Preview", bundle: nil)
+        let bundle = Bundle(for: type(of:self))
+        let storyboard = UIStoryboard(name: "Preview", bundle: bundle)
         let objVC = storyboard.instantiateViewController(withIdentifier: "Preview") as! PreviewVC
         objVC.image = image
         self.navigationController?.pushViewController(objVC, animated: true)

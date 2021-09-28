@@ -1,11 +1,11 @@
 
 
 //
-//  WallpaperPreviewVC.swift
-//  WallUltra
+//  PreviewVC.swift
+//  PhotoEditorSwift
 //
-//  Created by WallUltra on 23/12/19.
-//  Copyright © 2019 WallUltra. All rights reserved.
+//  Created by PhotoEditorSwift on 23/12/19.
+//  Copyright © 2019 PhotoEditorSwift. All rights reserved.
 //
 
 import UIKit
@@ -48,7 +48,7 @@ extension PreviewVC
             let alert = UIAlertController(title: "Photo Editor", message: "Photo saved successfully to your photo library", preferredStyle: UIAlertController.Style.alert);
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             UIApplication.shared.windows[0].rootViewController!.present(alert, animated: true, completion: nil)
-        }        
+        }
     }
     
     @IBAction func btnShare_Clicked(sender: UIButton)
@@ -64,8 +64,10 @@ extension PreviewVC
         let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
         photoEditor.photoEditorDelegate = self
         photoEditor.image = image
-        for i in 0...10 {
-            photoEditor.stickers.append(UIImage(named: i.description )!)
+        for i in 0...10
+        {
+            let bundle = Bundle(for: type(of:self))
+            photoEditor.stickers.append(UIImage(named: i.description, in: bundle, compatibleWith: nil)!)
         }
         photoEditor.modalPresentationStyle = UIModalPresentationStyle.currentContext
         self.present(photoEditor, animated: true, completion: nil)

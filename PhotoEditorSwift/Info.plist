@@ -18,5 +18,11 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Photo Editor requires access to the camera</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Photo Editor requires access to save wallpapers to the photo library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo Editor requires access to the photo library</string>
 </dict>
 </plist>
